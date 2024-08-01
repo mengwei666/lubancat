@@ -78,7 +78,7 @@
 >    [Unit]
 >    Description=x11vnc (Remote access)
 >    After=network-online.target
->    
+>       
 >    [Service]
 >    Type=simple
 >    ExecStart=/usr/bin/x11vnc -auth guess -display :0 -rfbauth /home/cat/.vnc/passwd -rfbport 5900 -forever -loop -noxdamage -repeat -shared -capslock -nomodtweak
@@ -86,7 +86,7 @@
 >    ExecReload=/bin/kill -HUP $MAINPID
 >    KillMode=control-group
 >    Restart=on-failure
->    
+>       
 >    [Install]
 >    WantedBy=graphical.target
 >    ```
@@ -126,10 +126,10 @@
 >    2. 鲁班猫通过 HDMI 接口连接屏幕，并接上鼠标键盘，方便后续操作。
 >
 >    3. 鲁班猫板卡必须连接上互联网。
->      下面将以搭载 Ubuntu20.04 的鲁班猫板卡为例，演示一下 NoMachine 安装流程。
+>        下面将以搭载 Ubuntu20.04 的鲁班猫板卡为例，演示一下 NoMachine 安装流程。
 >
 >    4. 获取安装包
->      对于安装包的拉取，一般都可以在终端输入 wget + 安装包下载链接实现, 如：
+>        对于安装包的拉取，一般都可以在终端输入 wget + 安装包下载链接实现, 如：
 >
 >      ```
 >      wget https://download.nomachine.com/download/8.8/Arm/nomachine_8.8.1_1_arm64.deb
@@ -203,3 +203,24 @@
 # 2024.06.28
 
 > 图片检测
+>
+> ```
+> ./rknn_ppocr_system_demo ./model/ppocrv4_det_rk3568.rknn ./model/ppocrv4_rec_rk3568.rknn ./model/2.jpg
+> 
+> 
+> 查看摄像头列出所有连接的摄像头设备
+> 
+> > v4l2-ctl --list-devices
+> 
+> 查看 `/dev/video9` 设备支持的格式和帧率
+> 
+> > v4l2-ctl --device=/dev/video9 --list-formats-ext
+> ```
+
+# 2024.08.01
+
+> 运行情况
+>
+> ![15](./img/15.png)
+>
+> ![16](./img/16.png)
