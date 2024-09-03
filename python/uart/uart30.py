@@ -14,7 +14,7 @@ class ImageWindow(QMainWindow):
 
         # 加载图片和图标
         self.pixmap = QPixmap('png/03-核对正常.png')
-        self.icon = QPixmap('png/normal-标签.png')  # 确保路径正确
+        self.icon = QPixmap('png/normal-标签.png')# 确保路径正确
 
         # 图标和文字的显示状态
         self.icon_visible = True
